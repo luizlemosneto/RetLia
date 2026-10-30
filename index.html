@@ -452,7 +452,7 @@ footer{background:#fff;padding:60px 0 50px}
                 </div>
                 <div class="r">
                   <div class="lf">
-                    <h4>Entrar</h4><p>Acesse a área da sua consultoria.</p>
+                    <h4>Entrar</h4>
                     <div class="fld"><label>E-mail</label><div id="f-mail"><span id="t-mail"></span></div></div>
                     <div class="fld"><label>Senha</label><div id="f-pass"><span id="t-pass"></span></div></div>
                     <div class="lbtn" id="l-btn">Entrar</div>
@@ -634,14 +634,14 @@ footer{background:#fff;padding:60px 0 50px}
       <h2 class="sec-h rv" style="margin-top:24px;--d:.05s">Antes de <mark>começar.</mark></h2>
     </div>
     <div>
-      <details class="rv"><summary>O que a consultoria precisa para começar?<span class="pm"></span></summary><p>A empresa cadastrada com um certificado A1 e-CNPJ válido, a planilha da equipe tributária com as rubricas da tese e os XMLs dos eventos já enviados ao eSocial.</p></details>
+      <details class="rv"><summary>O que a empresa precisa para começar?<span class="pm"></span></summary><p>A empresa cadastrada com um certificado A1 e-CNPJ válido, a planilha da equipe tributária com as rubricas da tese e os XMLs dos eventos já enviados ao eSocial.</p></details>
       <details class="rv"><summary>De onde vêm os XMLs?<span class="pm"></span></summary><p>Do portal eSocial, na área de Download, pedidos por período de entrega (até 31 dias por pedido). O RetLia reconhece a janela pelo nome do arquivo e mostra a cobertura mês a mês.</p></details>
       <details class="rv"><summary>E se faltar algum XML?<span class="pm"></span></summary><p>O diagnóstico aponta antes de qualquer envio quais períodos estão faltando, já divididos em janelas prontas para pedir no portal. Nada é transmitido enquanto houver bloqueio.</p></details>
       <details class="rv"><summary>O RetLia reconstrói a folha do cliente?<span class="pm"></span></summary><p>Não. A retificação sempre parte do XML vigente no acervo e acrescenta apenas as rubricas informativas da tese, alterando o mínimo possível.</p></details>
       <details class="rv"><summary>Preciso confirmar cada envio?<span class="pm"></span></summary><p>Não. O botão “Executar retificação” autoriza a sequência completa. Mesmo assim, cada transmissão é conferida antes de sair, e qualquer pendência pausa somente a etapa afetada.</p></details>
       <details class="rv"><summary>O RetLia faz o PER/DCOMP?<span class="pm"></span></summary><p>Não. A plataforma entrega o comparativo DCTFWeb antes e depois da retificação; a compensação é conduzida pela consultoria.</p></details>
       <details class="rv"><summary>Como o custo é calculado?<span class="pm"></span></summary><p>Funcionários retificados × competências × valor da faixa: R$ 0,33 até 200 funcionários, R$ 0,32 de 201 a 500 e R$ 0,31 acima de 500. Use o simulador para estimar.</p></details>
-      <details class="rv"><summary>Como a consultoria acessa a plataforma?<span class="pm"></span></summary><p>O acesso é por convite. Fale com a equipe pelo WhatsApp para cadastrar sua consultoria e receber o convite dos administradores.</p></details>
+      <details class="rv"><summary>Como a empresa acessa a plataforma?<span class="pm"></span></summary><p>O acesso é por convite. Fale com a equipe pelo WhatsApp para cadastrar sua empresa e receber o convite dos administradores.</p></details>
     </div>
   </div>
 </section>
@@ -660,7 +660,7 @@ footer{background:#fff;padding:60px 0 50px}
   <div class="wrap ft">
     <div>
       <span class="logo">Ret<span class="L">L</span><span class="i">ı</span><span class="L">a</span></span>
-      <p>Retificação do eSocial para consultorias tributárias.</p>
+      <p>Retificação do eSocial para empresas.</p>
     </div>
     <div class="r">
       <a class="wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener">Contate-nos pelo WhatsApp</a>
@@ -784,7 +784,7 @@ async function script(id){
   reset(); await w(900,id);
   // login
   await go($('#f-mail'),id,-60,0); $('#f-mail').className='f cr';
-  await type($('#t-mail'),'equipe@consultoria.com.br',id,48);
+  await type($('#t-mail'),'contato@empresa.com.br',id,48);
   $('#f-mail').className='';
   await go($('#f-pass'),id,-60,0); $('#f-pass').className='f cr';
   await type($('#t-pass'),'••••••••••',id,70);

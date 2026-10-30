@@ -120,7 +120,7 @@ button{cursor:pointer;border:0;background:none}
       <form id="f" novalidate>
         <div class="fld" id="fe">
           <label for="email">E-mail</label>
-          <div class="inp"><input id="email" name="email" type="email" autocomplete="username" placeholder="voce@consultoria.com.br"></div>
+          <div class="inp"><input id="email" name="email" type="email" autocomplete="username" placeholder="voce@empresa.com.br"></div>
           <div class="msg">Informe um e-mail válido.</div>
         </div>
         <div class="fld" id="fp">
@@ -156,7 +156,7 @@ $('#eye').addEventListener('click',()=>{
 [email,pass].forEach(i=>i.addEventListener('input',()=>i.closest('.fld').classList.remove('err')));
 $('#forgot').addEventListener('click',e=>{
   e.preventDefault();
-  say('Para redefinir a senha, fale com o administrador da sua consultoria ou com a equipe do RetLia.');
+  say('Para redefinir a senha, fale com o administrador da sua empresa ou com a equipe do RetLia.');
 });
 f.addEventListener('submit',e=>{
   e.preventDefault();
