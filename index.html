@@ -387,6 +387,11 @@ footer{padding:30px 0 40px}
 .cta-box{width:460px;padding:34px 24px;border-radius:26px}
 @media(max-width:760px){.cta-sec{flex-direction:column;gap:28px}.cta-brand{align-items:center}.cta-box{width:100%}}
 
+.cta-sec{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;padding:40px max(28px,calc((100vw - 1120px)/2 + 28px)) 56px}
+.cta-sec .cta-box{grid-column:1;grid-row:1;width:100%}
+.cta-sec .cta-brand{grid-column:2;grid-row:1}
+@media(max-width:1040px){.cta-sec{grid-template-columns:1fr}.cta-sec .cta-box,.cta-sec .cta-brand{grid-column:1;grid-row:auto}.cta-sec .cta-brand{align-items:center}}
+
 /* ---------- sombra do mouse nos cartões ---------- */
 .fx{position:relative;overflow:hidden}
 .fx::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .6s;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(0,0,0,.09),transparent 70%)}
