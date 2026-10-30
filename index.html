@@ -7,7 +7,7 @@
 <meta name="description" content="Retificação precisa para resultados seguros. O RetLia conduz toda a retificação do eSocial, da reabertura da folha ao comparativo DCTFWeb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --w:#fff; --g50:#FAFAF9; --g100:#F3F3F1; --g200:#E7E7E4; --g300:#D2D2CE; --g400:#A9A9A4;
@@ -106,7 +106,7 @@ mark.mint{background:var(--mint)}
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:110px 0 80px;background:
   radial-gradient(1000px 520px at 50% -10%,#fff 0%,rgba(255,255,255,0) 70%),var(--g100)}
 .hero .wrap{width:100%;position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center}
-.hero h1{font-size:clamp(28px,3.9vw,54px);margin-top:26px;max-width:17ch;font-weight:700;letter-spacing:-.03em;line-height:1.04}
+.hero h1{font-size:clamp(28px,3.9vw,54px);margin-top:0;max-width:17ch;font-weight:700;letter-spacing:-.03em;line-height:1.04}
 .hero h1 .g{color:var(--g400)}
 .hero .sub{margin-top:34px;font-size:clamp(14px,1.05vw,16px);max-width:56ch;color:var(--g600);font-weight:500}
 .hero .cta{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
@@ -121,7 +121,7 @@ mark.mint{background:var(--mint)}
 .show-s::before{content:"";position:absolute;inset:0;background:
   radial-gradient(900px 500px at 78% 0%,rgba(255,255,255,.13),transparent 65%),
   radial-gradient(700px 400px at 5% 100%,rgba(213,239,223,.08),transparent 70%);pointer-events:none}
-.mac-wrap{position:absolute;left:50%;top:140px;width:max(560px,min(1700px,calc(100vw - 24px),calc((100vh - 260px)/.655)));transform:translateX(-50%);perspective:2400px}
+.mac-wrap{position:absolute;left:50%;top:170px;width:max(560px,min(1700px,calc(100vw - 24px),calc((100vh - 290px)/.655)));transform:translateX(-50%);perspective:2400px}
 .mac{transform-origin:50% 100%;transform:rotateX(calc((1 - var(--p,0))*38deg)) scale(calc(.78 + var(--p,0)*.22))}
 .lid{position:relative;background:linear-gradient(#1b1b1c,#0c0c0d);border-radius:2.2% 2.2% 0 0/3.4% 3.4% 0 0;padding:1.1% 1.1% 1.5%;box-shadow:0 0 0 1.5px #3a3a3c,0 0 0 3px #111,0 60px 120px -30px rgba(0,0,0,.9),0 0 160px -20px rgba(213,239,223,.1)}
 .lid::before{content:"";position:absolute;left:50%;top:0;width:9%;height:2.6%;transform:translateX(-50%);background:#000;border-radius:0 0 10px 10px;z-index:3}
@@ -130,8 +130,9 @@ mark.mint{background:var(--mint)}
 .base::before{content:"";position:absolute;left:50%;top:0;width:14%;height:55%;transform:translateX(-50%);background:linear-gradient(#8f8f92,#bdbdc0);border-radius:0 0 12px 12px}
 .show-cap{position:absolute;z-index:5;left:clamp(20px,3vw,44px);bottom:44px;max-width:210px;font-size:10.5px;line-height:1.5;color:#85857f;font-weight:500}
 .show-cap b{display:block;color:#a3a39e;font:600 10.5px var(--body);margin-bottom:3px}
-.show-t{position:absolute;z-index:5;left:clamp(20px,3vw,44px);top:100px}
-.show-t h2{font-size:clamp(18px,1.7vw,24px);font-weight:700;letter-spacing:-.03em;line-height:1.15}
+.show-t{position:absolute;z-index:5;left:clamp(20px,3vw,44px);top:96px}
+.show-t h2{font-size:clamp(26px,2.6vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+.show-t h2 span{display:block;font-size:14px;font-weight:500;color:var(--g500);letter-spacing:0;margin-bottom:4px}
 .show-t h2 em{font-style:normal;color:var(--g500)}
 
 /* ---------- app (inside the mac) ---------- */
@@ -302,9 +303,8 @@ mark.mint{background:var(--mint)}
 .rng .row{display:flex;justify-content:space-between;align-items:baseline;font:600 15px var(--display);color:var(--g300)}
 .rng .row output{font:700 22px/1 var(--display);letter-spacing:-.03em;color:#fff}
 input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:9px;background:linear-gradient(90deg,#fff var(--v,0%),#3b3b38 var(--v,0%));margin:18px 0 6px;outline:none}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;border:6px solid var(--g900);box-shadow:0 0 0 2px #fff;cursor:grab;transition:transform .2s}
-input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
-input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#fff;border:6px solid var(--g900);box-shadow:0 0 0 2px #fff}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#fff;border:0;box-shadow:none;cursor:grab}
+input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:#fff;border:0;box-shadow:none;cursor:grab}
 .rng small{color:var(--g500);font-weight:500;font-size:13px}
 .res{margin-top:auto;padding-top:22px}
 .res .calc{color:var(--g400);font-weight:500;font-size:15px}
@@ -350,6 +350,22 @@ footer{background:#fff;padding:60px 0 50px}
 .ft p{font-size:13px;color:var(--g500);font-weight:500;max-width:34ch;margin-top:12px}
 .ft .r{font-size:13px;display:flex;flex-direction:column;gap:6px;text-align:right;font-weight:600;color:var(--g600)}
 .ft .r a:hover{color:var(--k)}
+
+/* ajustes finais */
+.hero .sub{font-weight:300;font-size:clamp(13px,.95vw,15px);line-height:1.6}
+.ft p{font-weight:300}
+.res .tot{margin-bottom:20px}
+.cta-box{max-width:820px;margin:0 auto;padding:26px 24px;border-radius:30px}
+.cta-box h2{font-size:clamp(20px,2.2vw,30px)}
+.cta-box .btn{margin-top:16px;height:44px;padding:0 6px 0 20px;font-size:14px}
+.cta-box .btn .a{width:32px;height:32px}
+.cta-box .btn .a svg{width:15px;height:15px}
+
+.sim h4{font:300 12px var(--body);color:var(--g400)}
+.sim .res .tot{font-size:clamp(26px,2.4vw,34px)}
+.sim .btn{height:42px;padding:0 5px 0 18px;font-size:13.5px}
+.sim .btn .a{width:32px;height:32px}
+.sim .btn .a svg{width:14px;height:14px}
 
 /* ---------- sombra do mouse nos cartões ---------- */
 .fx{position:relative;overflow:hidden}
@@ -431,9 +447,8 @@ footer{background:#fff;padding:60px 0 50px}
 <!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <span class="eyebrow rv">Retificação do eSocial para empresas</span>
     <h1 class="rv" style="--d:.08s">Retificação precisa para <span class="g">resultados seguros.</span></h1>
-    <p class="sub rv" style="--d:.16s">O RetLia conduz toda a retificação do eSocial, da reabertura da folha ao comparativo DCTFWeb, a partir do XML vigente, com conferência e rastreabilidade.</p>
+    <p class="sub rv" style="--d:.16s">O RetLia conduz a retificação do eSocial<br>do início ao fim.</p>
     <div class="cta rv" style="--d:.24s">
       <a class="btn still wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Falar com a equipe</span><span class="a"><svg><use href="#arr"/></svg></span></a>
       <a class="btn ghost still" href="#por-dentro"><span class="t">Ver por dentro</span></a>
@@ -444,8 +459,8 @@ footer{background:#fff;padding:60px 0 50px}
 <!-- SHOWCASE -->
 <section class="show dark" id="por-dentro">
   <div class="show-s">
-    <div class="show-t"><h2>Você envia.<br><em>O RetLia executa.</em></h2></div>
-    <div class="show-cap"><b>Prévia da plataforma</b>Simulação automática, sem cliques: do envio da planilha ao comparativo DCTFWeb. Dados fictícios.</div>
+    <div class="show-t"><h2><span>Você envia,</span>O RetLia executa.</h2></div>
+    <div class="show-cap">Prévia da plataforma</div>
     <div class="mac-wrap" id="macwrap">
       <div class="mac" id="mac">
         <div class="lid">
@@ -565,7 +580,7 @@ footer{background:#fff;padding:60px 0 50px}
 <section class="sec seq" id="como">
   <div class="wrap">
     <span class="eyebrow rv">Como funciona</span>
-    <h2 class="sec-h rv" style="margin-top:24px;--d:.05s">A sequência completa, <mark>na ordem exigida.</mark></h2>
+    <h2 class="sec-h rv" style="margin-top:12px;--d:.05s">A sequência completa, <mark>na ordem exigida.</mark></h2>
     <p class="sec-p rv" style="--d:.1s">Envie a planilha e os XMLs, confira o diagnóstico e clique em “Executar retificação”. O RetLia faz o resto, mesmo com a tela fechada.</p>
     <div class="seq-g">
       <div class="sq rv" style="--d:0s"><b>01</b><span>Abertura da folha</span></div>
@@ -583,7 +598,7 @@ footer{background:#fff;padding:60px 0 50px}
 <section class="sec mods" id="modulos">
   <div class="wrap">
     <span class="eyebrow rv">Módulos</span>
-    <h2 class="sec-h rv" style="margin-top:24px;--d:.05s">Tudo o que a retificação <mark class="mint">precisa.</mark></h2>
+    <h2 class="sec-h rv" style="margin-top:12px;--d:.05s">Tudo o que a retificação <mark class="mint">precisa.</mark></h2>
     <div class="bento">
       <article class="md rv"><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L8 8m4-4 4 4M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg></div><div><h3>Preparação e uploads</h3><p>Recebe a planilha única e os XMLs, em zip do portal ou avulsos, com upload em partes, retomada e cobertura de entregas mês a mês.</p></div></article>
       <article class="md rv" style="--d:.06s"><div class="ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3M8 11l2 2 4-4"/></svg></div><div><h3>Diagnóstico de suficiência</h3><p>Verifica certificado, janela legal, cobertura do acervo, rubricas e o cruzamento entre pagamentos, antes de qualquer transmissão.</p></div></article>
@@ -598,8 +613,8 @@ footer{background:#fff;padding:60px 0 50px}
 <section class="sec price" id="preco">
   <div class="wrap">
     <span class="eyebrow rv">Preço por retificação</span>
-    <h2 class="sec-h rv" style="margin-top:24px;--d:.05s">Escolha a <mark>faixa.</mark></h2>
-    <p class="sec-p rv" style="--d:.1s;font-size:14px">Retificar os últimos 5 anos da empresa significa 65 competências*</p>
+    <h2 class="sec-h rv" style="margin-top:12px;--d:.05s">Escolha a <mark>faixa.</mark></h2>
+    <p class="sec-p rv" style="--d:.1s;font-size:12.5px;font-weight:300">Retificar os últimos 5 anos da empresa significa 65 competências*</p>
     <div class="price-g">
       <div class="tiers rv">
         <h4>Valor por funcionário e competência</h4>
@@ -609,10 +624,9 @@ footer{background:#fff;padding:60px 0 50px}
               </div>
       <div class="sim rv" style="--d:.08s">
         <h4>Simule sua retificação</h4>
-        <div class="rng"><div class="row"><span>Funcionários retificados</span><output id="o-f">50</output></div><input type="range" id="r-f" min="1" max="1000" value="50"><small>*Considera 65 competências: cinco anos, contando o 13º.</small></div>
+        <div class="rng"><div class="row"><span>Funcionários retificados</span><output id="o-f">50</output></div><input type="range" id="r-f" min="1" max="1000" value="50"><small>*Considera 65 competências, isto é, 5 anos.</small></div>
         <div class="res">
           <div class="tot" id="tot">R$ 1.072,50</div>
-          <span class="tag" id="tag">Até 200 funcionários</span>
           <a class="btn light full wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Pedir proposta</span><span class="a"><svg><use href="#arr"/></svg><svg><use href="#arr"/></svg></span></a>
         </div>
       </div>
@@ -624,7 +638,7 @@ footer{background:#fff;padding:60px 0 50px}
 <section class="sec sec-sec" id="seguranca">
   <div class="wrap">
     <span class="eyebrow rv">Segurança e rastreabilidade</span>
-    <h2 class="sec-h rv" style="margin-top:24px;--d:.05s">Cada ação, <mark class="mint">registrada.</mark></h2>
+    <h2 class="sec-h rv" style="margin-top:12px;--d:.05s">Cada ação, <mark class="mint">registrada.</mark></h2>
     <div class="sg">
       <article class="sc rv"><svg viewBox="0 0 24 24"><path d="M4 4h12l4 4v12H4zM8 12h8M8 16h5M16 4v4h4"/></svg><div><h3>Trilha de auditoria imutável</h3><p>Toda ação crítica registra quem fez, em qual consultoria e empresa, e quando. O registro não pode ser alterado nem apagado.</p></div></article>
       <article class="sc rv" style="--d:.06s"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4M12 15v2"/></svg><div><h3>Cofre de certificados</h3><p>Senhas cifradas com chave assimétrica; o certificado só existe em memória durante o envio e nunca vai para logs.</p></div></article>
@@ -639,7 +653,7 @@ footer{background:#fff;padding:60px 0 50px}
   <div class="wrap faq-in">
     <div class="faq-l">
       <span class="eyebrow rv">Dúvidas frequentes</span>
-      <h2 class="sec-h rv" style="margin-top:24px;--d:.05s">Antes de <mark>começar.</mark></h2>
+      <h2 class="sec-h rv" style="margin-top:12px;--d:.05s">Antes de <mark>começar.</mark></h2>
     </div>
     <div>
       <details class="rv"><summary>O que a empresa precisa para começar?<span class="pm"></span></summary><p>A empresa cadastrada com um certificado A1 e-CNPJ válido, a planilha da equipe tributária com as rubricas da tese e os XMLs dos eventos já enviados ao eSocial.</p></details>
@@ -668,13 +682,9 @@ footer{background:#fff;padding:60px 0 50px}
   <div class="wrap ft">
     <div>
       <span class="logo">Ret<span class="L">L</span><span class="i">ı</span><span class="L">a</span></span>
-      <p>Retificação do eSocial para empresas.</p>
+      <p>Retificação do eSocial<br>para empresas.</p>
     </div>
-    <div class="r">
-      <a class="wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener">Contate-nos pelo WhatsApp</a>
-      <a href="login.html">Entrar na plataforma</a>
-      <span style="color:var(--g400)">© 2026 RetLia</span>
-    </div>
+    <div class="r"><span style="color:var(--g400)">© 2026 RetLia</span></div>
   </div>
 </footer>
 
@@ -864,7 +874,6 @@ function sim(){
   [rf].forEach(r=>r.style.setProperty('--v',((r.value-r.min)/(r.max-r.min)*100)+'%'));
   $('#o-f').textContent=f;
   $('#tot').textContent='R$ '+fmt(Math.round(f*c*v*100)/100);
-  $('#tag').textContent=['Até 200 funcionários','De 201 a 500 funcionários','Acima de 500 funcionários'][t];
   $$('.tr').forEach(r=>r.classList.toggle('act',+r.dataset.tier===t));
 }
 rf.addEventListener('input',sim);sim();
