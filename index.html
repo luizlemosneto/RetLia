@@ -387,10 +387,10 @@ footer{padding:30px 0 40px}
 .cta-box{width:460px;padding:34px 24px;border-radius:26px}
 @media(max-width:760px){.cta-sec{flex-direction:column;gap:28px}.cta-brand{align-items:center}.cta-box{width:100%}}
 
-.cta-sec{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;padding:12px max(28px,calc((100vw - 1120px)/2 + 28px)) 56px}
+.cta-sec{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;padding:44px max(28px,calc((100vw - 1120px)/2 + 28px)) 56px}
 .faq.sec{padding-bottom:12px}
 .cta-sec .cta-box{padding:26px 24px;border-radius:28px}
-.cta-sec .cta-box h2{font-size:clamp(24px,2.6vw,36px)}
+.cta-sec .cta-box h2{font-size:clamp(20px,2.1vw,28px)}
 .cta-sec .cta-box .btn{height:40px;font-size:13.5px;padding:0 5px 0 18px;margin-top:14px}
 .cta-sec .cta-box .btn .a{width:32px;height:32px}
 .cta-sec .cta-box{grid-column:1;grid-row:1;width:100%}
@@ -398,6 +398,12 @@ footer{padding:30px 0 40px}
 @media(max-width:1040px){.cta-sec{grid-template-columns:1fr}.cta-sec .cta-box,.cta-sec .cta-brand{grid-column:1;grid-row:auto}.cta-sec .cta-brand{align-items:center}}
 
 @media(max-width:1100px){.show-t{left:50%;top:112px;transform:translateX(-50%);text-align:center}.mac-wrap{width:max(520px,min(1700px,calc(100vw - 24px),calc((100vh - 280px)/.655)));top:62%}}
+
+.cta-sec .cta-box{background:var(--g100);color:var(--g900)}
+.cta-sec .cta-box::before{display:none}
+.cta-sec .cta-box h2 em{color:var(--g400)}
+.cta-sec .cta-box .btn{--bg:var(--k);--fg:#fff}
+.cta-sec .cta-box .btn .a{background:#fff;color:var(--k)}
 
 /* ---------- sombra do mouse nos cartões ---------- */
 .fx{position:relative;overflow:hidden}
@@ -724,7 +730,7 @@ $$('.rv').forEach(el=>io.observe(el));
 const nav=$('#nav'), show=$('.show'), cta=$('.cta-sec');
 function navTheme(){
   const y=48, over=el=>{const r=el.getBoundingClientRect();return r.top<=y&&r.bottom>=y};
-  nav.classList.toggle('dark',over(show)||over(cta));
+  nav.classList.toggle('dark',over(show));
   nav.classList.toggle('away',$('#como').getBoundingClientRect().top<60);
 }
 
