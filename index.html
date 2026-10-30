@@ -405,6 +405,11 @@ footer{padding:30px 0 40px}
 .cta-sec .cta-box .btn{--bg:var(--k);--fg:#fff}
 .cta-sec .cta-box .btn .a{background:#fff;color:var(--k)}
 
+.cta-sec .cta-box{background:none;padding:0;border-radius:0;display:flex;align-items:center;justify-content:flex-start;gap:24px}
+.cta-sec .cta-box h2{max-width:none;margin:0;white-space:nowrap;text-align:left}
+.cta-sec .cta-box .btn{margin-top:0}
+@media(max-width:760px){.cta-sec .cta-box{flex-wrap:wrap}.cta-sec .cta-box h2{white-space:normal}}
+
 /* ---------- sombra do mouse nos cartões ---------- */
 .fx{position:relative;overflow:hidden}
 .fx::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .6s;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(0,0,0,.09),transparent 70%)}
@@ -460,6 +465,7 @@ footer{padding:30px 0 40px}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></symbol>
   <symbol id="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
   <symbol id="ptr" viewBox="0 0 26 26"><path d="M4 2.5v18l5-4.6 3.3 7.4 3.4-1.5-3.3-7.3 6.9-.4z" fill="#111" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></symbol>
 </svg>
@@ -709,7 +715,7 @@ footer{padding:30px 0 40px}
   <div class="cta-brand"><span class="logo">RetL<span class="i">ı</span>a</span><p class="cta-note">Retificação do eSocial<br>para empresas.</p></div>
   <div class="cta-box">
     <h2 class="rv">Corrija, Recupere, <em>Retifique.</em></h2>
-    <a class="btn light wa rv" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Falar com a equipe</span><span class="a"><svg><use href="#arr"/></svg></span></a>
+    <a class="btn sm rv" href="#top"><span class="t">Voltar ao topo</span><span class="a"><svg><use href="#up"/></svg></span></a>
   </div>
 </section>
 
