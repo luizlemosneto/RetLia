@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RetLia | Retificação do eSocial</title>
-<meta name="description" content="Erros do passado, lucro no presente. O RetLia conduz toda a retificação do eSocial, da reabertura da folha ao comparativo DCTFWeb.">
+<meta name="description" content="Retificação precisa para resultados seguros. O RetLia conduz toda a retificação do eSocial, da reabertura da folha ao comparativo DCTFWeb.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -38,7 +38,6 @@ mark.mint{background:var(--mint)}
 .logo .L{color:inherit}
 .logo .i{position:relative;display:inline-block}
 .logo .i::after{content:"";position:absolute;width:.2em;height:.2em;border-radius:50%;background:var(--mint-ink);left:50%;top:-.02em;transform:translateX(-52%)}
-.logo .i::before{content:"";position:absolute;width:.2em;height:.2em;border-radius:50%;background:var(--mint);left:50%;top:-.02em;transform:translateX(-52%) scale(2.1);z-index:-1}
 .dark .logo{color:#fff}
 
 /* ---------- buttons ---------- */
@@ -70,6 +69,15 @@ mark.mint{background:var(--mint)}
 .btn.still:active{transform:none}
 .btn.still:hover .a svg:first-child{transform:none}
 
+/* botões: troca de cor simples, sem movimento */
+.btn::before{display:none!important}
+.btn .a svg+svg{display:none}
+.btn:hover .a svg:first-child{transform:none}
+.btn,.btn.ghost{transition:background .35s,color .35s}
+.btn:hover{background:var(--hov);color:var(--hfg);transform:none;box-shadow:none}
+.btn:active{transform:none}
+.btn.ghost:hover{background:var(--k);color:#fff;box-shadow:inset 0 0 0 1.5px var(--k)}
+
 /* ---------- nav ---------- */
 .nav{position:fixed;top:16px;left:0;right:0;z-index:50;display:flex;justify-content:center;pointer-events:none;transition:transform .6s var(--ease)}
 .nav.away{transform:translateY(-220%)}
@@ -87,9 +95,9 @@ mark.mint{background:var(--mint)}
 .nav.dark .btn .a{background:var(--k);color:#fff}
 
 /* ---------- hero ---------- */
-.hero{position:relative;padding:130px 0 56px;background:
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;padding:110px 0 80px;background:
   radial-gradient(1000px 520px at 50% -10%,#fff 0%,rgba(255,255,255,0) 70%),var(--g100)}
-.hero .wrap{position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero .wrap{width:100%;position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center}
 .hero h1{font-size:clamp(28px,3.9vw,54px);margin-top:26px;max-width:17ch;font-weight:700;letter-spacing:-.03em;line-height:1.04}
 .hero h1 .g{color:var(--g400)}
 .hero .sub{margin-top:34px;font-size:clamp(14px,1.05vw,16px);max-width:56ch;color:var(--g600);font-weight:500}
@@ -105,15 +113,18 @@ mark.mint{background:var(--mint)}
 .show-s::before{content:"";position:absolute;inset:0;background:
   radial-gradient(900px 500px at 78% 0%,rgba(255,255,255,.13),transparent 65%),
   radial-gradient(700px 400px at 5% 100%,rgba(213,239,223,.08),transparent 70%);pointer-events:none}
-.mac-wrap{position:absolute;left:50%;top:92px;width:min(1800px,calc(100vw - 24px),calc((100vh - 185px)/.655));transform:translateX(-50%);perspective:2400px}
+.mac-wrap{position:absolute;left:50%;top:140px;width:max(560px,min(1700px,calc(100vw - 24px),calc((100vh - 260px)/.655)));transform:translateX(-50%);perspective:2400px}
 .mac{transform-origin:50% 100%;transform:rotateX(calc((1 - var(--p,0))*38deg)) scale(calc(.78 + var(--p,0)*.22))}
 .lid{position:relative;background:linear-gradient(#1b1b1c,#0c0c0d);border-radius:2.2% 2.2% 0 0/3.4% 3.4% 0 0;padding:1.1% 1.1% 1.5%;box-shadow:0 0 0 1.5px #3a3a3c,0 0 0 3px #111,0 60px 120px -30px rgba(0,0,0,.9),0 0 160px -20px rgba(213,239,223,.1)}
 .lid::before{content:"";position:absolute;left:50%;top:0;width:9%;height:2.6%;transform:translateX(-50%);background:#000;border-radius:0 0 10px 10px;z-index:3}
 .screen{position:relative;aspect-ratio:1280/800;border-radius:6px;overflow:hidden;background:#fff}
 .base{position:relative;height:clamp(10px,1.5vw,22px);width:116%;margin-left:-8%;background:linear-gradient(#d9d9db,#a3a3a6 70%,#7c7c7f);border-radius:0 0 40px 40px/0 0 100% 100%;box-shadow:0 30px 60px -10px rgba(0,0,0,.8)}
 .base::before{content:"";position:absolute;left:50%;top:0;width:14%;height:55%;transform:translateX(-50%);background:linear-gradient(#8f8f92,#bdbdc0);border-radius:0 0 12px 12px}
-.show-cap{position:absolute;z-index:5;left:clamp(14px,2vw,28px);bottom:14px;max-width:250px;font-size:11px;line-height:1.45;color:#8c8c88;font-weight:500}
-.show-cap b{display:block;color:#a9a9a5;font:600 11px var(--body);margin-bottom:2px}
+.show-cap{position:absolute;z-index:5;left:clamp(20px,3vw,44px);bottom:44px;max-width:210px;font-size:10.5px;line-height:1.5;color:#85857f;font-weight:500}
+.show-cap b{display:block;color:#a3a39e;font:600 10.5px var(--body);margin-bottom:3px}
+.show-t{position:absolute;z-index:5;left:clamp(20px,3vw,44px);top:100px}
+.show-t h2{font-size:clamp(18px,1.7vw,24px);font-weight:700;letter-spacing:-.03em;line-height:1.15}
+.show-t h2 em{font-style:normal;color:var(--g500)}
 
 /* ---------- app (inside the mac) ---------- */
 .app{position:absolute;left:0;top:0;width:1280px;height:800px;transform-origin:0 0;font-family:var(--body);font-size:14px;color:var(--g900);background:var(--g50);line-height:1.4}
@@ -204,7 +215,7 @@ mark.mint{background:var(--mint)}
 .login.off{opacity:0;pointer-events:none}
 .login .l{background:var(--g900);color:#fff;padding:56px;display:flex;flex-direction:column;justify-content:space-between}
 .login .l .logo{font-size:34px;color:#fff}
-.login .l h3{font-size:40px;font-weight:700;letter-spacing:-.03em;line-height:.92;max-width:9ch}
+.login .l h3{font-size:34px;font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:auto;text-align:center}
 .login .l h3 em{font-style:normal;color:var(--g500)}
 .login .r{display:grid;place-items:center}
 .lf{width:340px}
@@ -227,7 +238,7 @@ mark.mint{background:var(--mint)}
 .sq{position:relative;background:#fff;border:1px solid var(--g200);border-radius:22px;padding:14px 14px 16px;min-height:96px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .6s var(--ease),background .4s,color .4s,box-shadow .6s var(--ease)}
 .sq b{font:700 22px/1 var(--display);letter-spacing:-.03em;color:var(--g300);transition:color .4s}
 .sq span{font:700 14px/1.08 var(--display);letter-spacing:-.035em}
-.sq:hover{background:var(--g900);color:#fff;transform:translateY(-10px);box-shadow:0 30px 50px -24px rgba(0,0,0,.5)}
+.sq:hover{background:var(--g900);color:#fff}
 .sq:hover b{color:var(--mint)}
 .sq.last{background:var(--mint)}
 .sq.last:hover{background:var(--mint);color:var(--g900)}
@@ -244,11 +255,16 @@ mark.mint{background:var(--mint)}
 .md .ico svg{width:19px;height:19px;stroke:var(--g900);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:.4s}
 .md h3{font-size:18px;letter-spacing:-.03em;line-height:.98}
 .md p{margin-top:8px;color:var(--g600);font-weight:500;font-size:13.5px;max-width:40ch;transition:color .4s}
-.md:hover{background:var(--g900);color:#fff;transform:translateY(-6px)}
+.md:hover{background:var(--g900);color:#fff}
 .md:hover p{color:var(--g400)}
-.md:hover .ico{background:var(--mint);transform:rotate(-8deg) scale(1.08)}
+.md:hover .ico{background:var(--mint)}
 .md.hl{background:var(--sun)}.md.hl p{color:#6b5a14}.md.hl .ico{background:rgba(255,255,255,.55)}
 .md.hl:hover p{color:var(--g400)}
+.md{justify-content:center;align-items:center;text-align:center;gap:16px}
+.md:nth-child(1),.md:nth-child(2){min-height:165px}
+.md:nth-child(n+3){min-height:184px}
+.md h3{font-size:16px}
+.md p{font-size:12.5px;margin-top:6px;max-width:44ch}
 
 /* ---------- benefits ---------- */
 .ben{background:#fff}
@@ -291,7 +307,6 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 .sec-sec{background:var(--g100)}
 .sg{margin-top:44px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .sc{background:#fff;border-radius:26px;padding:18px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .6s var(--ease)}
-.sc:hover{transform:translateY(-8px)}
 .sc svg{width:24px;height:24px;stroke:var(--g900);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .sc h3{font-size:17px;letter-spacing:-.03em;line-height:1;margin-bottom:8px}
 .sc p{color:var(--g600);font-weight:500;font-size:13.5px}
@@ -307,19 +322,19 @@ summary .pm{flex:none;width:44px;height:44px;border-radius:50%;background:#fff;p
 summary .pm::before,summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;background:var(--k);margin:-1px 0 0 -8px;transition:.5s var(--ease)}
 summary .pm::after{transform:rotate(90deg)}
 summary:hover .pm{background:var(--mint)}
-details[open] .pm{background:var(--k);transform:rotate(180deg)}
+details[open] .pm{background:var(--k)}
 details[open] .pm::before,details[open] .pm::after{background:#fff}
 details[open] .pm::after{transform:rotate(0)}
 details p{padding:0 60px 24px 0;color:var(--g600);font-weight:500;font-size:14px;max-width:60ch;animation:fd .6s var(--ease)}
-@keyframes fd{from{opacity:0;transform:translateY(-8px)}}
+@keyframes fd{from{opacity:0}}
 
 /* ---------- cta + footer ---------- */
 .cta-sec{background:#fff;padding:0 12px 12px}
-.cta-box{position:relative;background:var(--k);color:#fff;border-radius:48px;padding:64px 28px;text-align:center;overflow:hidden}
+.cta-box{position:relative;background:var(--k);color:#fff;border-radius:48px;padding:40px 28px;text-align:center;overflow:hidden}
 .cta-box::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 360px at 50% 120%,rgba(213,239,223,.22),transparent 70%),radial-gradient(500px 260px at 90% -10%,rgba(255,255,255,.1),transparent 70%)}
-.cta-box h2{position:relative;font-size:clamp(24px,3.1vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.06;max-width:16ch;margin:0 auto}
+.cta-box h2{position:relative;font-size:clamp(22px,2.8vw,38px);font-weight:700;letter-spacing:-.03em;line-height:1.06;max-width:16ch;margin:0 auto}
 .cta-box h2 em{font-style:normal;color:var(--g500)}
-.cta-box .btn{margin-top:50px;position:relative}
+.cta-box .btn{margin-top:26px;position:relative}
 footer{background:#fff;padding:60px 0 50px}
 .ft{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap}
 .ft .logo{font-size:clamp(30px,4vw,52px);letter-spacing:-.04em}
@@ -336,7 +351,7 @@ footer{background:#fff;padding:60px 0 50px}
 .md.hl.fx::after{background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.14),transparent 70%)}
 
 /* ---------- reveal ---------- */
-.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease) var(--d,0s),transform .8s var(--ease) var(--d,0s),background .4s,color .4s}
 .rv.in{opacity:1;transform:none}
 
 /* ---------- responsive ---------- */
@@ -408,10 +423,10 @@ footer{background:#fff;padding:60px 0 50px}
 <section class="hero">
   <div class="wrap">
     <span class="eyebrow rv">Retificação do eSocial para empresas</span>
-    <h1 class="rv" style="--d:.08s">Erros do passado, <span class="g">lucro no presente</span></h1>
+    <h1 class="rv" style="--d:.08s">Retificação precisa para <span class="g">resultados seguros.</span></h1>
     <p class="sub rv" style="--d:.16s">O RetLia conduz toda a retificação do eSocial, da reabertura da folha ao comparativo DCTFWeb, a partir do XML vigente, com conferência e rastreabilidade.</p>
     <div class="cta rv" style="--d:.24s">
-      <a class="btn still wa" href="https://wa.me/" target="_blank" rel="noopener"><span class="t">Falar com a equipe</span><span class="a"><svg><use href="#arr"/></svg></span></a>
+      <a class="btn still wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Falar com a equipe</span><span class="a"><svg><use href="#arr"/></svg></span></a>
       <a class="btn ghost still" href="#por-dentro"><span class="t">Ver por dentro</span></a>
     </div>
   </div>
@@ -420,7 +435,8 @@ footer{background:#fff;padding:60px 0 50px}
 <!-- SHOWCASE -->
 <section class="show dark" id="por-dentro">
   <div class="show-s">
-    <div class="show-cap"><b>Prévia da plataforma</b>Tudo acontece sozinho, sem nenhum clique: do envio da planilha ao comparativo DCTFWeb. Dados fictícios.</div>
+    <div class="show-t"><h2>Você envia.<br><em>O RetLia executa.</em></h2></div>
+    <div class="show-cap"><b>Prévia da plataforma</b>Simulação automática, sem cliques: do envio da planilha ao comparativo DCTFWeb. Dados fictícios.</div>
     <div class="mac-wrap" id="macwrap">
       <div class="mac" id="mac">
         <div class="lid">
@@ -431,7 +447,7 @@ footer{background:#fff;padding:60px 0 50px}
               <div class="login" id="login">
                 <div class="l">
                   <span class="logo">Ret<span class="L">L</span><span class="i">ı</span><span class="L">a</span></span>
-                  <h3>Retificar nunca foi tão <em>Fácil.</em></h3>
+                  <h3>Retificar nunca foi<br>tão <em>Fácil.</em></h3>
                 </div>
                 <div class="r">
                   <div class="lf">
@@ -590,7 +606,7 @@ footer{background:#fff;padding:60px 0 50px}
           <div class="calc" id="calc">50 × 65 × R$ 0,33</div>
           <div class="tot" id="tot">R$ 1.072,50</div>
           <span class="tag" id="tag">Até 200 funcionários</span>
-          <a class="btn light full wa" href="https://wa.me/" target="_blank" rel="noopener"><span class="t">Pedir proposta</span><span class="a"><svg><use href="#arr"/></svg><svg><use href="#arr"/></svg></span></a>
+          <a class="btn light full wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Pedir proposta</span><span class="a"><svg><use href="#arr"/></svg><svg><use href="#arr"/></svg></span></a>
         </div>
       </div>
     </div>
@@ -618,15 +634,15 @@ footer{background:#fff;padding:60px 0 50px}
       <span class="eyebrow rv">Dúvidas frequentes</span>
       <h2 class="sec-h rv" style="margin-top:24px;--d:.05s">Antes de <mark>começar.</mark></h2>
     </div>
-    <div class="rv">
-      <details><summary>O que a consultoria precisa para começar?<span class="pm"></span></summary><p>A empresa cadastrada com um certificado A1 e-CNPJ válido, a planilha da equipe tributária com as rubricas da tese e os XMLs dos eventos já enviados ao eSocial.</p></details>
-      <details><summary>De onde vêm os XMLs?<span class="pm"></span></summary><p>Do portal eSocial, na área de Download, pedidos por período de entrega (até 31 dias por pedido). O RetLia reconhece a janela pelo nome do arquivo e mostra a cobertura mês a mês.</p></details>
-      <details><summary>E se faltar algum XML?<span class="pm"></span></summary><p>O diagnóstico aponta antes de qualquer envio quais períodos estão faltando, já divididos em janelas prontas para pedir no portal. Nada é transmitido enquanto houver bloqueio.</p></details>
-      <details><summary>O RetLia reconstrói a folha do cliente?<span class="pm"></span></summary><p>Não. A retificação sempre parte do XML vigente no acervo e acrescenta apenas as rubricas informativas da tese, alterando o mínimo possível.</p></details>
-      <details><summary>Preciso confirmar cada envio?<span class="pm"></span></summary><p>Não. O botão “Executar retificação” autoriza a sequência completa. Mesmo assim, cada transmissão é conferida antes de sair, e qualquer pendência pausa somente a etapa afetada.</p></details>
-      <details><summary>O RetLia faz o PER/DCOMP?<span class="pm"></span></summary><p>Não. A plataforma entrega o comparativo DCTFWeb antes e depois da retificação; a compensação é conduzida pela consultoria.</p></details>
-      <details><summary>Como o custo é calculado?<span class="pm"></span></summary><p>Funcionários retificados × competências × valor da faixa: R$ 0,33 até 200 funcionários, R$ 0,32 de 201 a 500 e R$ 0,31 acima de 500. Use o simulador para estimar.</p></details>
-      <details><summary>Como a consultoria acessa a plataforma?<span class="pm"></span></summary><p>O acesso é por convite. Fale com a equipe pelo WhatsApp para cadastrar sua consultoria e receber o convite dos administradores.</p></details>
+    <div>
+      <details class="rv"><summary>O que a consultoria precisa para começar?<span class="pm"></span></summary><p>A empresa cadastrada com um certificado A1 e-CNPJ válido, a planilha da equipe tributária com as rubricas da tese e os XMLs dos eventos já enviados ao eSocial.</p></details>
+      <details class="rv"><summary>De onde vêm os XMLs?<span class="pm"></span></summary><p>Do portal eSocial, na área de Download, pedidos por período de entrega (até 31 dias por pedido). O RetLia reconhece a janela pelo nome do arquivo e mostra a cobertura mês a mês.</p></details>
+      <details class="rv"><summary>E se faltar algum XML?<span class="pm"></span></summary><p>O diagnóstico aponta antes de qualquer envio quais períodos estão faltando, já divididos em janelas prontas para pedir no portal. Nada é transmitido enquanto houver bloqueio.</p></details>
+      <details class="rv"><summary>O RetLia reconstrói a folha do cliente?<span class="pm"></span></summary><p>Não. A retificação sempre parte do XML vigente no acervo e acrescenta apenas as rubricas informativas da tese, alterando o mínimo possível.</p></details>
+      <details class="rv"><summary>Preciso confirmar cada envio?<span class="pm"></span></summary><p>Não. O botão “Executar retificação” autoriza a sequência completa. Mesmo assim, cada transmissão é conferida antes de sair, e qualquer pendência pausa somente a etapa afetada.</p></details>
+      <details class="rv"><summary>O RetLia faz o PER/DCOMP?<span class="pm"></span></summary><p>Não. A plataforma entrega o comparativo DCTFWeb antes e depois da retificação; a compensação é conduzida pela consultoria.</p></details>
+      <details class="rv"><summary>Como o custo é calculado?<span class="pm"></span></summary><p>Funcionários retificados × competências × valor da faixa: R$ 0,33 até 200 funcionários, R$ 0,32 de 201 a 500 e R$ 0,31 acima de 500. Use o simulador para estimar.</p></details>
+      <details class="rv"><summary>Como a consultoria acessa a plataforma?<span class="pm"></span></summary><p>O acesso é por convite. Fale com a equipe pelo WhatsApp para cadastrar sua consultoria e receber o convite dos administradores.</p></details>
     </div>
   </div>
 </section>
@@ -635,7 +651,7 @@ footer{background:#fff;padding:60px 0 50px}
 <section class="cta-sec dark">
   <div class="cta-box">
     <h2 class="rv">Corrija, Recupere, <em>Retifique.</em></h2>
-    <a class="btn light wa rv" href="https://wa.me/" target="_blank" rel="noopener" data-mag><span class="t">Falar com a equipe</span><span class="a"><svg><use href="#arr"/></svg><svg><use href="#arr"/></svg></span></a>
+    <a class="btn light wa rv" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Falar com a equipe</span><span class="a"><svg><use href="#arr"/></svg></span></a>
   </div>
 </section>
 
@@ -648,7 +664,7 @@ footer{background:#fff;padding:60px 0 50px}
       <p>Retificação do eSocial para consultorias tributárias.</p>
     </div>
     <div class="r">
-      <a class="wa" href="https://wa.me/" target="_blank" rel="noopener">Contate-nos pelo WhatsApp</a>
+      <a class="wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener">Contate-nos pelo WhatsApp</a>
       <a href="login.html">Entrar na plataforma</a>
       <span style="color:var(--g400)">© 2026 RetLia</span>
     </div>
@@ -661,7 +677,8 @@ const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelect
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* reveal */
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+$$('.seq-g,.bento,.sg,.price-g,.faq-in>div:last-child').forEach(g=>[...g.children].forEach((c,i)=>c.style.setProperty('--d',(i*.07)+'s')));
 $$('.rv').forEach(el=>io.observe(el));
 
 /* nav theme over dark sections */

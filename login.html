@@ -25,7 +25,6 @@ button{cursor:pointer;border:0;background:none}
 .logo{font:700 30px/1 var(--display);letter-spacing:-.04em;display:inline-flex;align-items:baseline}
 .logo .i{position:relative;display:inline-block}
 .logo .i::after{content:"";position:absolute;width:.2em;height:.2em;border-radius:50%;background:var(--mint-ink);left:50%;top:-.02em;transform:translateX(-52%)}
-.logo .i::before{content:"";position:absolute;width:.2em;height:.2em;border-radius:50%;background:var(--mint);left:50%;top:-.02em;transform:translateX(-52%) scale(2.1);z-index:-1}
 
 .page{min-height:100vh;display:grid;grid-template-columns:1.05fr 1fr;gap:12px;padding:12px}
 
@@ -33,6 +32,7 @@ button{cursor:pointer;border:0;background:none}
 .side{position:relative;background:var(--k);color:#fff;border-radius:36px;padding:34px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .side::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 340px at 85% 0%,rgba(255,255,255,.12),transparent 70%),radial-gradient(520px 300px at 0% 100%,rgba(213,239,223,.14),transparent 70%)}
 .side>*{position:relative}
+.side>.mid{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
 .side h1{font:700 clamp(26px,2.8vw,40px)/1.1 var(--display);letter-spacing:-.03em}
 .side h1 em{font-style:normal;color:var(--g500)}
 .side .back{display:inline-flex;align-items:center;gap:10px;font:600 13px var(--display);color:var(--g300);transition:color .3s}
@@ -45,7 +45,7 @@ button{cursor:pointer;border:0;background:none}
 .main{display:grid;place-items:center;padding:28px}
 .card{width:100%;max-width:380px}
 .card h2{font:700 clamp(24px,2.1vw,30px)/1.1 var(--display);letter-spacing:-.03em}
-.card .lead{margin:8px 0 24px;color:var(--g600);font-weight:500}
+.card h2{margin-bottom:22px}
 .fld{margin-bottom:16px}
 .fld label{display:block;font:600 13px var(--display);color:var(--g700);margin-bottom:8px}
 .inp{position:relative}
@@ -78,12 +78,17 @@ button{cursor:pointer;border:0;background:none}
 .btn::before{content:"";position:absolute;z-index:-1;right:7px;top:50%;width:40px;height:40px;margin-top:-20px;border-radius:50%;background:var(--hov);transform:scale(0);transition:transform .7s var(--ease)}
 .btn:hover::before{transform:scale(11)}
 .btn:hover{color:var(--hfg);box-shadow:0 18px 40px -14px rgba(0,0,0,.35)}
-.btn:active{transform:scale(.98)}
+.btn::before{display:none}
+.btn .a svg+svg{display:none}
+.btn:hover .a svg:first-child{transform:none}
+.btn{transition:background .35s,color .35s}
+.btn:hover{background:var(--hov);color:var(--hfg);box-shadow:none}
+.btn:active{transform:none}
 
 .notice{display:none;margin-top:18px;background:var(--sun);color:var(--sun-ink);border-radius:20px;padding:16px 18px;font-size:14px;font-weight:500;line-height:1.5}
 .notice.on{display:block;animation:in .5s var(--ease)}
-@keyframes in{from{opacity:0;transform:translateY(8px)}}
-.foot{margin-top:24px;padding:14px 18px;border-radius:20px;background:#fff;font-size:13px;color:var(--g600);font-weight:500}
+@keyframes in{from{opacity:0}}
+.foot{margin-top:22px;font-size:13px;letter-spacing:-.02em;color:var(--g600);font-weight:500}
 .foot a{color:var(--g900);font-weight:600}
 .foot a:hover{opacity:.6}
 
@@ -106,15 +111,12 @@ button{cursor:pointer;border:0;background:none}
       <a href="index.html" class="logo" aria-label="RetLia">RetL<span class="i">ı</span>a</a>
       <a href="index.html" class="back"><span class="a"><svg><use href="#arr"/></svg></span>Voltar ao site</a>
     </div>
-    <div>
-      <h1>Retificar nunca foi tão<br><em>Fácil.</em></h1>
-    </div>
+    <div class="mid"><h1>Retificar nunca foi<br>tão <em>Fácil.</em></h1></div>
   </aside>
 
   <main class="main">
     <div class="card">
       <h2>Entrar</h2>
-      <p class="lead">Acesse a área da sua consultoria.</p>
       <form id="f" novalidate>
         <div class="fld" id="fe">
           <label for="email">E-mail</label>
@@ -136,7 +138,7 @@ button{cursor:pointer;border:0;background:none}
         <button class="btn" type="submit"><span class="t">Entrar na plataforma</span><span class="a"><svg><use href="#arr"/></svg><svg><use href="#arr"/></svg></span></button>
         <div class="notice" id="notice" role="status"></div>
       </form>
-      <div class="foot">Ainda não tem acesso? O cadastro é por convite. <a class="wa" href="https://wa.me/" target="_blank" rel="noopener">Fale com a equipe</a></div>
+      <div class="foot">Ainda não tem acesso? O cadastro é por convite. <a class="wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener">Fale com a equipe</a></div>
     </div>
   </main>
 </div>
