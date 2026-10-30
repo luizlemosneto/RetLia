@@ -600,10 +600,8 @@ footer{background:#fff;padding:60px 0 50px}
               </div>
       <div class="sim rv" style="--d:.08s">
         <h4>Simule sua retificação</h4>
-        <div class="rng"><div class="row"><span>Funcionários retificados</span><output id="o-f">50</output></div><input type="range" id="r-f" min="1" max="1000" value="50"></div>
-        <div class="rng"><div class="row"><span>Competências</span><output id="o-c">65</output></div><input type="range" id="r-c" min="1" max="130" value="65"><small>*Até 65: cinco anos, contando o 13º.</small></div>
+        <div class="rng"><div class="row"><span>Funcionários retificados</span><output id="o-f">50</output></div><input type="range" id="r-f" min="1" max="1000" value="50"><small>*Considera 65 competências: cinco anos, contando o 13º.</small></div>
         <div class="res">
-          <div class="calc" id="calc">50 × 65 × R$ 0,33</div>
           <div class="tot" id="tot">R$ 1.072,50</div>
           <span class="tag" id="tag">Até 200 funcionários</span>
           <a class="btn light full wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Pedir proposta</span><span class="a"><svg><use href="#arr"/></svg><svg><use href="#arr"/></svg></span></a>
@@ -849,19 +847,18 @@ vio.observe($('.show-s'));
 document.addEventListener('visibilitychange',()=>{if(document.hidden&&started){started=false;run++}else if(!document.hidden&&vis&&!started){started=true;loop()}});
 
 /* ---------- pricing simulator ---------- */
-const rf=$('#r-f'), rc=$('#r-c');
+const rf=$('#r-f');
 const fmt=n=>n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
 function sim(){
-  const f=+rf.value,c=+rc.value;
+  const f=+rf.value,c=65;
   const t=f<=200?0:f<=500?1:2, v=[.33,.32,.31][t];
-  [rf,rc].forEach(r=>r.style.setProperty('--v',((r.value-r.min)/(r.max-r.min)*100)+'%'));
-  $('#o-f').textContent=f;$('#o-c').textContent=c;
-  $('#calc').textContent=`${f} × ${c} × R$ ${fmt(v)}`;
+  [rf].forEach(r=>r.style.setProperty('--v',((r.value-r.min)/(r.max-r.min)*100)+'%'));
+  $('#o-f').textContent=f;
   $('#tot').textContent='R$ '+fmt(Math.round(f*c*v*100)/100);
   $('#tag').textContent=['Até 200 funcionários','De 201 a 500 funcionários','Acima de 500 funcionários'][t];
   $$('.tr').forEach(r=>r.classList.toggle('act',+r.dataset.tier===t));
 }
-rf.addEventListener('input',sim);rc.addEventListener('input',sim);sim();
+rf.addEventListener('input',sim);sim();
 })();
 </script>
 </body>
