@@ -790,13 +790,21 @@ function macScroll(){
   mac.style.setProperty('--p',reduce?1:p.toFixed(3));
 }
 function fit(){app.style.transform=`scale(${screen.clientWidth/1280})`}
-const outro=$('#fim'), faqEl=$('.faq'), outroC=$('#outroc');
+const outro=$('#fim'), faqIn=$('.faq-in');
+const ghost=[['#fim .outro-l .btn',.40],['#fim .outro-l h2',.47],['#fim .outro-r .logo',.54],['#fim .outro-r p',.62],['#outrocopy',.70]].map(([sel,st])=>({el:$(sel),st}));
 function outroScroll(){
-  if(reduce){faqEl.style.opacity=1;outroC.style.opacity=1;$('#outrocopy').style.opacity=1;return}
+  if(reduce){faqIn.style.opacity=1;ghost.forEach(g=>g.el.style.opacity=1);return}
   const r=outro.getBoundingClientRect(), q=Math.min(1,Math.max(0,(innerHeight-r.top)/innerHeight));
-  faqEl.style.opacity=String(1-Math.min(1,q*1.15));
-  const o=Math.min(1,Math.max(0,(q-.45)/.55));
-  outroC.style.opacity=String(o);$('#outrocopy').style.opacity=String(o);outroC.style.transform=`translateY(${((1-o)*36).toFixed(1)}px)`;
+  const f=Math.min(1,q*1.15);
+  faqIn.style.opacity=String(1-f);
+  faqIn.style.filter=f>0.01?`blur(${(f*10).toFixed(1)}px)`:'none';
+  faqIn.style.transform=`translateY(${(-f*24).toFixed(1)}px)`;
+  ghost.forEach(g=>{
+    const o=Math.min(1,Math.max(0,(q-g.st)/.3)), e=1-Math.pow(1-o,3);
+    g.el.style.opacity=String(e.toFixed(3));
+    g.el.style.filter=e<0.99?`blur(${((1-e)*16).toFixed(1)}px)`:'none';
+    g.el.style.transform=`translateY(${((1-e)*44).toFixed(1)}px) scale(${(0.94+0.06*e).toFixed(3)})`;
+  });
 }
 addEventListener('scroll',()=>{navTheme();macScroll();outroScroll()},{passive:true});
 addEventListener('resize',()=>{fit();navTheme();macScroll();outroScroll()});
