@@ -387,7 +387,12 @@ footer{padding:30px 0 40px}
 .cta-box{width:460px;padding:34px 24px;border-radius:26px}
 @media(max-width:760px){.cta-sec{flex-direction:column;gap:28px}.cta-brand{align-items:center}.cta-box{width:100%}}
 
-.cta-sec{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center;padding:40px max(28px,calc((100vw - 1120px)/2 + 28px)) 56px}
+.cta-sec{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center;padding:12px max(28px,calc((100vw - 1120px)/2 + 28px)) 56px}
+.faq.sec{padding-bottom:12px}
+.cta-sec .cta-box{padding:64px 24px;border-radius:32px}
+.cta-sec .cta-box h2{font-size:clamp(24px,2.6vw,36px)}
+.cta-sec .cta-box .btn{height:44px;font-size:14px;padding:0 6px 0 20px;margin-top:22px}
+.cta-sec .cta-box .btn .a{width:32px;height:32px}
 .cta-sec .cta-box{grid-column:1;grid-row:1;width:100%}
 .cta-sec .cta-brand{grid-column:2;grid-row:1}
 @media(max-width:1040px){.cta-sec{grid-template-columns:1fr}.cta-sec .cta-box,.cta-sec .cta-brand{grid-column:1;grid-row:auto}.cta-sec .cta-brand{align-items:center}}
