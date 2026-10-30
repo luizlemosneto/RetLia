@@ -121,7 +121,7 @@ mark.mint{background:var(--mint)}
 .show-s::before{content:"";position:absolute;inset:0;background:
   radial-gradient(900px 500px at 78% 0%,rgba(255,255,255,.13),transparent 65%),
   radial-gradient(700px 400px at 5% 100%,rgba(213,239,223,.08),transparent 70%);pointer-events:none}
-.mac-wrap{position:absolute;left:calc(50% + 40px);top:205px;width:max(560px,min(1700px,calc(100vw - 24px),calc((100vh - 310px)/.655)));transform:translateX(-50%);perspective:2400px}
+.mac-wrap{position:absolute;left:50%;top:54%;width:max(520px,min(1700px,calc(100vw - 520px),calc((100vh - 190px)/.655)));transform:translate(-50%,-50%);perspective:2400px}
 .mac{transform-origin:50% 100%;transform:rotateX(calc((1 - var(--p,0))*38deg)) scale(calc(.78 + var(--p,0)*.22))}
 .lid{position:relative;background:linear-gradient(#1b1b1c,#0c0c0d);border-radius:2.2% 2.2% 0 0/3.4% 3.4% 0 0;padding:1.1% 1.1% 1.5%;box-shadow:0 0 0 1.5px #3a3a3c,0 0 0 3px #111,0 60px 120px -30px rgba(0,0,0,.9),0 0 160px -20px rgba(213,239,223,.1)}
 .lid::before{content:"";position:absolute;left:50%;top:0;width:9%;height:2.6%;transform:translateX(-50%);background:#000;border-radius:0 0 10px 10px;z-index:3}
@@ -397,7 +397,7 @@ footer{padding:30px 0 40px}
 .cta-sec .cta-brand{grid-column:2;grid-row:1}
 @media(max-width:1040px){.cta-sec{grid-template-columns:1fr}.cta-sec .cta-box,.cta-sec .cta-brand{grid-column:1;grid-row:auto}.cta-sec .cta-brand{align-items:center}}
 
-@media(max-width:1100px){.show-t{left:50%;top:112px;transform:translateX(-50%);text-align:center}.mac-wrap{left:50%}}
+@media(max-width:1100px){.show-t{left:50%;top:112px;transform:translateX(-50%);text-align:center}.mac-wrap{width:max(520px,min(1700px,calc(100vw - 24px),calc((100vh - 280px)/.655)));top:62%}}
 
 /* ---------- sombra do mouse nos cartões ---------- */
 .fx{position:relative;overflow:hidden}
