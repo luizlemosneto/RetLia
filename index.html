@@ -367,6 +367,20 @@ footer{background:#fff;padding:60px 0 50px}
 .sim .btn .a{width:32px;height:32px}
 .sim .btn .a svg{width:14px;height:14px}
 
+.cta-sec{display:flex;justify-content:center;align-items:center;gap:36px;padding:40px 12px 12px}
+.cta-note{font-size:13px;font-weight:300;color:var(--g500);line-height:1.5}
+.cta-box{max-width:none;width:300px;margin:0;padding:44px 20px;border-radius:28px}
+.cta-box h2{font-size:clamp(18px,1.7vw,22px)}
+.cta-box .btn{height:36px;font-size:12.5px;padding:0 4px 0 14px;margin-top:14px;gap:10px}
+.cta-box .btn .a{width:28px;height:28px}
+.cta-box .btn .a svg{width:13px;height:13px}
+.ft{justify-content:center}
+footer{padding:30px 0 40px}
+@media(max-width:760px){.cta-sec{flex-direction:column;gap:20px}.cta-note{text-align:center}}
+
+.hero .sub{white-space:nowrap}
+@media(max-width:600px){.hero .sub{white-space:normal}}
+
 /* ---------- sombra do mouse nos cartões ---------- */
 .fx{position:relative;overflow:hidden}
 .fx::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;opacity:0;transition:opacity .6s;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),rgba(0,0,0,.09),transparent 70%)}
@@ -448,10 +462,9 @@ footer{background:#fff;padding:60px 0 50px}
 <section class="hero">
   <div class="wrap">
     <h1 class="rv" style="--d:.08s">Retificação precisa para <span class="g">resultados seguros.</span></h1>
-    <p class="sub rv" style="--d:.16s">O RetLia conduz a retificação do eSocial<br>do início ao fim.</p>
+    <p class="sub rv" style="--d:.16s">O RetLia conduz a retificação do eSocial do início ao fim.</p>
     <div class="cta rv" style="--d:.24s">
       <a class="btn still wa" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Falar com a equipe</span><span class="a"><svg><use href="#arr"/></svg></span></a>
-      <a class="btn ghost still" href="#por-dentro"><span class="t">Ver por dentro</span></a>
     </div>
   </div>
 </section>
@@ -670,6 +683,7 @@ footer{background:#fff;padding:60px 0 50px}
 
 <!-- CTA -->
 <section class="cta-sec dark">
+  <p class="cta-note">Retificação do eSocial<br>para empresas.</p>
   <div class="cta-box">
     <h2 class="rv">Corrija, Recupere, <em>Retifique.</em></h2>
     <a class="btn light wa rv" href="https://wa.me/5548988598361" target="_blank" rel="noopener"><span class="t">Falar com a equipe</span><span class="a"><svg><use href="#arr"/></svg></span></a>
@@ -680,11 +694,7 @@ footer{background:#fff;padding:60px 0 50px}
 
 <footer>
   <div class="wrap ft">
-    <div>
-      <span class="logo">Ret<span class="L">L</span><span class="i">ı</span><span class="L">a</span></span>
-      <p>Retificação do eSocial<br>para empresas.</p>
-    </div>
-    <div class="r"><span style="color:var(--g400)">© 2026 RetLia</span></div>
+    <span class="logo">RetL<span class="i">ı</span>a</span>
   </div>
 </footer>
 
